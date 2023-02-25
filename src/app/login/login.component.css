@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+    color: aqua;
+}
+div{
+    margin-left: 35%;
+    margin-top: 15%;
+    background:fixed;
+    height: 300px;
+    width: 400px;
+    text-align: center;
+    border: 2px black solid;
+    border-radius: 30px;
+}
+#u1{
+    border-radius: 20px;
+    padding: 2px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+#p1{
+    border-radius: 20px;
+    padding: 2px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+button{
+    margin-top: 20px;
+}
