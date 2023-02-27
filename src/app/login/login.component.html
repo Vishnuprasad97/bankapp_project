@@ -1,11 +1,15 @@
+<div><h3 class="text-black p-3">{{aim}}</h3></div>
+<form>
 
-<div>
-    <h1>Login Form </h1>
-    <label for="u1">Username:</label>
-    <input type="text" name="" id="u1"><br>
-    <label for="p1">Password:</label>
-    <input type="password" name="" id="p1"><br>
-    <button type="submit" class="btn btn-success">Login</button>
+<div class="container w-25 border mt-5 p-3" style="background: gray;">
+    <h1 class="text-center text-white">Login Form </h1>
+   <div class="mt-2 p-2">
+     <input (change)="acnoChange($event)" type="text" name="" id="acid" [placeholder]="data" class="form-control"></div>
+
+   <div class="mt-2 p-2"> <input (change)="pswdChange($event)" type="password" name="" id="pid" placeholder="Password" class="form-control"></div>
+    <button type="submit" class="btn btn-outline-info" (click)="login()">Login</button><br><br>
+    <p class="text-white">New User? <a class="text-info" href="">Register</a></p>
+
 </div>
-
+</form>
 
