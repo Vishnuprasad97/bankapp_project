@@ -25,4 +25,20 @@ export class DataService {
     }
 
   }
+  login(acno:any,password:any){
+    var userDetails=this.userDetails
+    if(acno in userDetails){
+      if(password==userDetails[acno]['password']){
+       return true
+      }
+      else{
+        alert('Incorrect Password')
+        return false
+      }
+    }
+    else{
+      alert('User Does not Exist')
+      return false
+    }
+  }
 }
