@@ -4,10 +4,10 @@
 <div class="container w-25 border mt-5 p-3" style="background: gray;">
     <h1 class="text-center text-white">Login Form </h1>
    <div class="mt-2 p-2">
-     <input (change)="acnoChange($event)" type="text" name="" id="acid" [placeholder]="data" class="form-control"></div>
+     <input #acno type="text" name="" id="acid" [placeholder]="data" class="form-control"></div>
 
-   <div class="mt-2 p-2"> <input (change)="pswdChange($event)" type="password" name="" id="pid" placeholder="Password" class="form-control"></div>
-    <button type="submit" class="btn btn-outline-info" (click)="login()">Login</button><br><br>
+   <div class="mt-2 p-2"> <input #password type="password" name="" id="pid" placeholder="Password" class="form-control"></div>
+    <button type="submit" class="btn btn-outline-info" (click)="login(acno,password)">Login</button><br><br>
     <p class="text-white">New User? <a class="text-info" href="">Register</a></p>
 
 </div>
