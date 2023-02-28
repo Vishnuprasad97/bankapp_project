@@ -1,13 +1,38 @@
 <form (ngSubmit)="register()">
-<div class="container w-25 border mt-5 p-3" style="background: gray;">
-    <h1 class="text-center text-white">Registration Form </h1>
-   <div class="mt-2 p-2">
-     <input [(ngModel)]="username" type="text" name="acno" id="usid" class="form-control" placeholder="Enter Username"></div>
-     <div class="mt-2 p-2">
-        <input [(ngModel)]="acno" type="text" name="acno" id="acid" class="form-control" placeholder="Enter Account No."></div>
+  <div class="container w-25 border mt-5 p-3" style="background: gray">
+    <h1 class="text-center text-white">Registration Form</h1>
+    <div class="mt-2 p-2">
+      <input
+        [(ngModel)]="username"
+        type="text"
+        name="acno"
+        id="usid"
+        class="form-control"
+        placeholder="Enter Username"
+      />
+    </div>
+    <div class="mt-2 p-2">
+      <input
+        [(ngModel)]="acno"
+        type="text"
+        name="acno"
+        id="acid"
+        class="form-control"
+        placeholder="Enter Account No."
+      />
+    </div>
 
-   <div class="mt-2 p-2"> <input [(ngModel)]="password" type="password" name="password" id="pid" placeholder="Password" class="form-control"></div>
-    <button type="submit" class="btn btn-outline-info">Register</button><br><br>
-
-</div>
+    <div class="mt-2 p-2">
+      <input
+        [(ngModel)]="password"
+        type="password"
+        name="password"
+        id="pid"
+        placeholder="Password"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn btn-outline-info">Register</button
+    ><br /><br />
+  </div>
 </form>

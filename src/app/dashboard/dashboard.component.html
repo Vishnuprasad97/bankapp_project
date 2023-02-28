@@ -1,43 +1,60 @@
-<form action="" (ngSubmit)="">
-    
-  <div class="container w-25 border text-center mt-5 p-3 " style="background:gray">
+<form action="" (ngSubmit)="deposit()">
+  <div><h1>Welcome {{user}}</h1></div>
+  <div
+    class="container w-25 border text-center mt-5 p-3"
+    style="background: gray"
+  >
+  
     <h1>Deposit</h1>
     <div class="mt-2 p-2">
       <label for="acno1">Account Number:</label>
-      <input [(ngModel)]="acno1" name="acno1" type="text" id="acno1" >
+      <input [(ngModel)]="acno1" name="acno1" type="text" id="acno1" />
     </div>
 
     <div class="mt-2 p-2 ms-5">
       <label for="password1">Password:</label>
-      <input type="password" name="password1" [(ngModel)]="password1" id="password1" >
+      <input
+        type="password"
+        name="password1"
+        [(ngModel)]="password1"
+        id="password1"
+      />
     </div>
     <div class="mt-2 p-2 ms-5">
       <label for="">Amount:</label>
-      <input type="text" [(ngModel)]="amount1" name="amount1">
+      <input type="text" [(ngModel)]="amount1" name="amount1" />
     </div>
     <div>
       <button type="submit" class="btn btn-outline-info">Deposit</button>
     </div>
   </div>
 </form>
-<form action="" (ngSubmit)="">
-    <div class="container w-25 border text-center mt-5 p-3 " style="background-color:gray">
-        <h1>Withdraw</h1>
-        <div class="mt-2 p-2">
-          <label for="acno2">Account Number:</label>
-          <input type="text" id="acno2" [(ngModel)]="acno2" name="acno2">
-        </div>
-    
-        <div class="mt-2 p-2 ms-5">
-          <label for="password2">Password:</label>
-          <input type="password" name="password2" id="password2" [(ngModel)]="" >
-        </div>
-        <div class="mt-2 p-2 ms-5">
-          <label for="">Amount:</label>
-          <input type="text" name="amount2" [(ngModel)]="">
-        </div>
-        <div>
-          <button type="submit" class="btn btn-outline-info">Withdraw</button>
-        </div>
-      </div>
-    </form>
+<form action="" (ngSubmit)="withdraw()">
+  <div
+    class="container w-25 border text-center mt-5 p-3"
+    style="background-color: gray"
+  >
+    <h1>Withdraw</h1>
+    <div class="mt-2 p-2">
+      <label for="acno2">Account Number:</label>
+      <input type="text" id="acno2" [(ngModel)]="acno2" name="acno2" />
+    </div>
+
+    <div class="mt-2 p-2 ms-5">
+      <label for="password2">Password:</label>
+      <input
+        type="password"
+        name="password2"
+        id="password2"
+        [(ngModel)]="password2"
+      />
+    </div>
+    <div class="mt-2 p-2 ms-5">
+      <label for="">Amount:</label>
+      <input type="text" name="amount2" [(ngModel)]="amount2" />
+    </div>
+    <div>
+      <button type="submit" class="btn btn-outline-info">Withdraw</button>
+    </div>
+  </div>
+</form>

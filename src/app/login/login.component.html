@@ -1,15 +1,34 @@
-<div><h3 class="text-black p-3">{{aim}}</h3></div>
-<form (ngSubmit)="login()">
-
-<div class="container w-25 border mt-5 p-3" style="background: gray;">
-    <h1 class="text-center text-white">Login Form </h1>
-   <div class="mt-2 p-2">
-     <input [(ngModel)]="acno" type="text" name="acno" id="acid" [placeholder]="data" class="form-control"></div>
-
-   <div class="mt-2 p-2"> <input [(ngModel)]="password" type="password" name="password" id="pid" placeholder="Password" class="form-control"></div>
-    <button type="submit" class="btn btn-outline-info">Login</button><br><br>
-    <p class="text-white">New User? <a class="text-info" routerLink="register">Register</a></p>
-
+<div>
+  <h3 class="text-black p-3">{{ aim }}</h3>
 </div>
-</form>
+<form (ngSubmit)="login()">
+  <div class="container w-25 border mt-5 p-3" style="background: gray">
+    <h1 class="text-center text-white">Login Form</h1>
+    <div class="mt-2 p-2">
+      <input
+        [(ngModel)]="acno"
+        type="text"
+        name="acno"
+        id="acid"
+        [placeholder]="data"
+        class="form-control"
+      />
+    </div>
 
+    <div class="mt-2 p-2">
+      <input
+        [(ngModel)]="password"
+        type="password"
+        name="password"
+        id="pid"
+        placeholder="Password"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn btn-outline-info">Login</button
+    ><br /><br />
+    <p class="text-white">
+      New User? <a class="text-info" routerLink="register">Register</a>
+    </p>
+  </div>
+</form>
