@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class DashboardComponent {
   acno2: any;
   password2: any;
   amount2: any;
-  constructor(private ds: DataService) {
+  constructor(private ds: DataService,private router:Router) {
     this.user=this.ds.currentuser
   }
   deposit() {
@@ -42,5 +43,10 @@ export class DashboardComponent {
         `${amount} is debited from your account remaining balance is:${result}`
       );
     }
+  }
+  logout() {
+    localStorage.removeItem('currentAcno')
+    localStorage.removeItem('currentUser')
+    this.router.navigateByUrl('')
   }
 }

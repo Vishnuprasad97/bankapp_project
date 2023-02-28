@@ -1,9 +1,9 @@
-<form (ngSubmit)="register()">
+<form [formGroup]="registerform" (ngSubmit)="register()">
   <div class="container w-25 border mt-5 p-3" style="background: gray">
     <h1 class="text-center text-white">Registration Form</h1>
     <div class="mt-2 p-2">
       <input
-        [(ngModel)]="username"
+        formControlName="username"
         type="text"
         name="acno"
         id="usid"
@@ -11,9 +11,10 @@
         placeholder="Enter Username"
       />
     </div>
+    <div  class="text-danger" *ngIf="this.registerform.get('username')?.errors&&this.registerform.get('username')?.touched">Invalid Username</div>
     <div class="mt-2 p-2">
       <input
-        [(ngModel)]="acno"
+        formControlName="acno"
         type="text"
         name="acno"
         id="acid"
@@ -21,10 +22,11 @@
         placeholder="Enter Account No."
       />
     </div>
+    <div  class="text-danger" *ngIf="this.registerform.get('acno')?.errors&&this.registerform.get('acno')?.touched">Invalid Account Number</div>
 
     <div class="mt-2 p-2">
       <input
-        [(ngModel)]="password"
+        formControlName="password"
         type="password"
         name="password"
         id="pid"
@@ -32,6 +34,7 @@
         class="form-control"
       />
     </div>
+    <div  class="text-danger" *ngIf="this.registerform.get('password')?.errors&&this.registerform.get('password')?.touched">Invalid Password</div>
     <button type="submit" class="btn btn-outline-info">Register</button
     ><br /><br />
   </div>
