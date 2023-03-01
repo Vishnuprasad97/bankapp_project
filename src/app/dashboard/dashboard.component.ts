@@ -8,6 +8,7 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
+  acno:any
   user:any
   acno1: any;
   password1: any;
@@ -48,5 +49,11 @@ export class DashboardComponent {
     localStorage.removeItem('currentAcno')
     localStorage.removeItem('currentUser')
     this.router.navigateByUrl('')
+  }
+  delete() {
+    this.acno=JSON.parse(localStorage.getItem('currentAcno')||'')
+  }
+  oncancel() {
+    this.acno=''
   }
 }

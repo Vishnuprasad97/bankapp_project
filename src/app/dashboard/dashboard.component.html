@@ -1,9 +1,17 @@
+
+  <button (click)="logout()" class="btn btn-warning text-center p-3 mb-3 me-3 ms-2">Log Out</button>
+  <button (click)="delete()" class="btn btn-danger text-center p-3 mb-3">Delete</button>
+  <app-delete [item]="acno" (onCancel)="oncancel()"></app-delete>
+  <!-- A form that is used to deposit and withdraw money. -->
 <form action="" (ngSubmit)="deposit()">
   <div><h1>Welcome {{user}}</h1></div>
+
+    
   <div class="p-3 w-25 ms-3 text-center bg-white border border-info" style="border-radius: 50px;"><a routerLink="/transaction">View Transaction History</a></div>
   <div
     class="container w-25 border text-center mt-5 p-3"
-    style="background: gray"
+    style="background: gray" 
+    [ngClass]="acno? 'style1':''"
   >
   
     <h1>Deposit</h1>
@@ -30,10 +38,12 @@
     </div>
   </div>
 </form>
+<!-- A form that is used to withdraw money. -->
 <form action="" (ngSubmit)="withdraw()">
   <div
     class="container w-25 border text-center mt-5 p-3"
     style="background-color: gray"
+    [ngClass]="acno? 'style1':''"
   >
     <h1>Withdraw</h1>
     <div class="mt-2 p-2">
@@ -59,6 +69,6 @@
     </div>
   </div>
   <div>
-    <button (click)="logout()" class="btn btn-outline-info text-center">Log Out</button>
+    
   </div>
 </form>
