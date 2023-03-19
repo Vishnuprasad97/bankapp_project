@@ -28,16 +28,22 @@ export class RegisterComponent {
     var username = this.registerform.value.username;
     var acno = this.registerform.value.acno;
     var password = this.registerform.value.password;
-    const result = this.ds.register( acno,username, password);
+
     if (this.registerform.valid) {
-      if (result) {
-        alert('Sucessfully Registered');
+      this.ds.register(acno, username, password)
+        .subscribe((result: any) => {
+        alert(result.message);
         this.router.navigateByUrl('');
-      } else {
-        alert('User already exist');
-      }
-    } else {
-      alert('Invalid Form');
+      });
+      //   if (result) {
+      //     alert('Sucessfully Registered');
+      //     this.router.navigateByUrl('');
+      //   } else {
+      //     alert('User already exist');
+      //   }
+      // } else {
+      //   alert('Invalid Form');
+      // }
     }
   }
 }

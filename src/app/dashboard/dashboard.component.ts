@@ -16,22 +16,31 @@ export class DashboardComponent {
   acno2: any;
   password2: any;
   amount2: any;
-  constructor(private ds: DataService,private router:Router) {
-    this.user=this.ds.currentuser
+  constructor(private ds: DataService, private router: Router) {
+  
+  }
+  ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('currentUser') || ' ');
   }
   deposit() {
     var acno = this.acno1;
     var password = this.password1;
     var amount = this.amount1;
 
-    const result = this.ds.deposit(acno, password, amount);
-    if (result) {
-      alert(
-        `${amount} is credited to your account remaining balance is:${result}`
-      );
-    } else {
-      alert('Deposit Failed');
-    }
+    this.ds.deposit(acno, password, amount)
+      .subscribe((result: any) => {
+      alert(result.message)
+      },
+        result => {
+        alert(result.error.message)
+      })
+    // if (result) {
+    //   alert(
+    //     `${amount} is credited to your account remaining balance is:${result}`
+    //   );
+    // } else {
+    //   alert('Deposit Failed');
+    // }
   }
   withdraw() {
     var acno = this.acno2;

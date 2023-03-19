@@ -17,7 +17,7 @@ export class LoginComponent {
     private router: Router,
     private ds: DataService,
     private formbuilder: FormBuilder
-  ) {}
+  ) { }
   LoginForm = this.formbuilder.group({
     acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
     password: ['', [Validators.required, Validators.pattern('[0-9]+')]],
@@ -26,13 +26,17 @@ export class LoginComponent {
   login() {
     var acno = this.LoginForm.value.acno;
     var password = this.LoginForm.value.password;
-    const result = this.ds.login(acno, password);
-
-    if (this.LoginForm.valid) {
-      if (result) {
-        alert('Login Successful');
-        this.router.navigateByUrl('dashboard');
-      }
-    }
+    this.ds.login(acno, password)
+      .subscribe((result: any) => {
+        localStorage.setItem('currentUser', JSON.stringify(result.currentUser))
+        localStorage.setItem('currentAcno', JSON.stringify(result.currentAcno))
+        localStorage.setItem('token',JSON.stringify(result.token))
+        alert(result.message)
+        this.router.navigateByUrl('dashboard')
+      },
+        result => {
+          alert(result.error.message)
+        }
+      )
   }
 }
